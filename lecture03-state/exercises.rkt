@@ -1,4 +1,27 @@
 #lang racket
+
+(let ((x 1))
+  (let ((x 2)
+        (y x))
+    y))
+
+((lambda (x)
+   ((lambda (x y)
+      y)
+    2
+    x))
+ 1)
+
+(let ((x 1))
+  (let* ((x 2)
+         (y x))
+    y))
+
+(let ((x 1))
+  (let((x 2))
+    (let((y x))
+      y)))
+
 (provide (all-defined-out))
 
 ;; Return #t when x appears in xs.
@@ -35,6 +58,14 @@
       (append (power-set-slow (rest xs))
               (map (lambda (subset) (cons (first xs) subset))
                    (power-set-slow (rest xs))))))
+
+(define (power-set xs)
+  (if (null? xs)
+      '(())
+      (let ((s (power-set(rest xs))))
+        (append s
+                (map (lambda (subset) (cons (first xs) subset))
+                     s)))))
 
 ;; Implement the same function using let so the recursive result is computed
 ;; once and reused.
