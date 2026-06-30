@@ -1,0 +1,1 @@
+("9.0" tarm64osx ("fa3e4bef33c4855bf7e17bb2d20c5500638166ba" . "9ca6de9417bd21b2a634c0d13604291d06ad4752") #"/Users/rknash/coding/drexel/cs360/lecture02-scheme/exercises.rkt" (collects #"drracket" #"private" #"drracket-errortrace-key.rkt") (collects #"racket" #"main.rkt") (collects #"racket" #"runtime-config.rkt") (collects #"rackunit" #"main.rkt"))
