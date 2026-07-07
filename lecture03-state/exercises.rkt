@@ -59,6 +59,9 @@
               (map (lambda (subset) (cons (first xs) subset))
                    (power-set-slow (rest xs))))))
 
+;; Implement the same function using let so the recursive result is computed
+;; once and reused.
+;;my implementation
 (define (power-set xs)
   (if (null? xs)
       '(())
@@ -66,11 +69,6 @@
         (append s
                 (map (lambda (subset) (cons (first xs) subset))
                      s)))))
-
-;; Implement the same function using let so the recursive result is computed
-;; once and reused.
-(define (power-set xs)
-  'not-implemented)
 
 ;; Return a withdrawal procedure with a private balance.
 (define (make-withdraw balance)
